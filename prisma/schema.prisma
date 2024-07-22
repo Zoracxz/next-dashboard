@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model hospital_list {
+  No        Int     @id
+  panelCode String? @db.VarChar(255)
+  hospital  String? @db.VarChar(255)
+  telNo     String? @db.VarChar(255)
+  state     String? @db.VarChar(255)
+}
+
+model outpatient_gp_clinics {
+  No            Int     @id
+  clinicName    String  @db.VarChar(255)
+  addressOne    String? @db.VarChar(255)
+  addressTwo    String? @db.VarChar(255)
+  addressThree  String? @db.VarChar(255)
+  postCode      String? @db.VarChar(255)
+  town          String? @db.VarChar(255)
+  state         String? @db.VarChar(255)
+  phone         String? @db.VarChar(255)
+  operatingHour String? @db.VarChar(500)
+}
